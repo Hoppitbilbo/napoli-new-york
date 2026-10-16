@@ -1,9 +1,9 @@
 'use strict';
 const $ = selector => document.querySelector(selector);
 const ART = {
-  napoli:'assets/napoli-partenza.png',
-  ocean:'assets/atlantico-tempesta.png',
-  newyork:'assets/new-york-arrivo.png'
+  napoli:'napoli-partenza.png',
+  ocean:'atlantico-tempesta.png',
+  newyork:'new-york-arrivo.png'
 };
 const ART_CREDIT='Illustrazione originale generata con IA';
 const SOURCES = {
