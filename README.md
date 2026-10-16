@@ -10,6 +10,6 @@ Un percorso didattico su cinema ed emigrazione italiana, con una presentazione a
 
 Il sito usa HTML, CSS e JavaScript e non richiede compilazione. Per GitHub Pages scegli **Deploy from a branch**, il ramo `main` e la cartella `/ (root)`.
 
-Le illustrazioni della presentazione sono salvate in `assets/`. Font, fotografie d’archivio e trailer richiedono Internet. I progressi del gioco restano nel browser del partecipante.
+Le illustrazioni della presentazione sono incluse nella cartella principale. Font, fotografie d’archivio e trailer richiedono Internet. I progressi del gioco restano nel browser del partecipante.
 
-Crediti e prompt delle illustrazioni: [assets/IMMAGINI.md](assets/IMMAGINI.md).
+Crediti e prompt delle illustrazioni: [IMMAGINI.md](IMMAGINI.md).
