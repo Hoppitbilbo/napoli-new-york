@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Napoli → New York — Escape Room & Quaderno di Viaggio | 1949</title>
+<meta name="description" content="Un viaggio-escape room per la classe: dal film Napoli New York di Salvatores alla storia dell'emigrazione italiana. Per terza media e prima superiore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Special+Elite&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f2e7cd;
+  --paper-2:#e9d9b6;
+  --paper-dark:#d9c49a;
+  --ink:#1d1a15;
+  --ink-soft:#4a4237;
+  --navy:#101f30;
+  --navy-2:#1a324f;
+  --sea:#1d4e5f;
+  --oxblood:#7a1e1e;
+  --brass:#b88a2e;
+  --brass-light:#e8c872;
+  --stamp-red:#a32121;
+  --stamp-blue:#1e3a5f;
+  --shadow: 0 18px 50px rgba(16,31,48,.28);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background: #0d1928;
+  color:var(--ink);
+  font-family:'Inter',system-ui,sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
+}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif; line-height:1.1}
+.type{font-family:'Special Elite',monospace}
+.hand{font-family:'Caveat',cursive}
+a{color:inherit}
+.wrap{max-width:1120px; margin:0 auto; padding:0 22px}
+/* NAV */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(13,25,40,.92); backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(232,200,114,.25);
+  color:#f2e7cd;
+}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:12px 22px; max-width:1120px; margin:0 auto}
+.brand{display:flex; gap:12px; align-items:center; text-decoration:none}
+.brand-mark{
+  width:38px;height:38px; border-radius:50%; display:grid; place-items:center;
+  background:radial-gradient(circle at 30% 30%, #e8c872, #b88a2e 60%, #6b4d15);
+  color:#101f30; font-family:'Playfair Display',serif; font-weight:900; font-size:20px;
+  border:2px solid #f2e7cd55; box-shadow:0 4px 14px rgba(0,0,0,.4);
+}
+.brand small{display:block; font-size:11px; letter-spacing:.18em; text-transform:uppercase; opacity:.7}
+.brand strong{font-family:'Playfair Display',serif; font-size:18px; letter-spacing:.02em}
+.nav-links{display:flex; gap:6px; flex-wrap:wrap}
+.nav-links a{
+  text-decoration:none; font-size:13.5px; font-weight:600; letter-spacing:.02em;
+  padding:8px 13px; border-radius:999px; border:1px solid transparent; opacity:.92;
+}
+.nav-links a:hover{border-color:rgba(232,200,114,.5); background:rgba(232,200,114,.12)}
+.nav-cta{background:var(--brass-light)!important; color:#101f30!important}
+/* HERO */
+.hero{
+  position:relative; color:#f2e7cd; overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 70% -10%, #24496e 0%, transparent 60%),
+    radial-gradient(700px 400px at 15% 20%, #7a1e1e55 0%, transparent 60%),
+    linear-gradient(180deg, #0d1928 0%, #122840 55%, #0d1928 100%);
+  padding:54px 0 0;
+}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:center; padding-bottom:10px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.kicker{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'Special Elite',monospace; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+  border:1px dashed rgba(242,231,205,.5); padding:8px 14px; border-radius:999px; background:rgba(255,255,255,.06);
+}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:#5fd68a; box-shadow:0 0 10px #5fd68a; animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(42px,6vw,74px); margin:18px 0 10px; font-weight:900; letter-spacing:-.02em}
+.hero h1 em{font-style:italic; font-weight:500; color:var(--brass-light)}
+.hero h1 .arrow{color:var(--brass-light); font-weight:400}
+.hero-sub{font-size:17px; opacity:.9; max-width:52ch}
+.hero-sub strong{color:var(--brass-light)}
+.film-strip{
+  margin:20px 0; display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  font-family:'Special Elite',monospace; font-size:13px;
+}
+.film-strip span{border:1px solid rgba(242,231,205,.3); padding:6px 10px; border-radius:6px; background:rgba(0,0,0,.3)}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+.btn{
+  appearance:none; border:0; cursor:pointer; text-decoration:none;
+  font-weight:700; font-size:15px; padding:14px 20px; border-radius:12px;
+  display:inline-flex; align-items:center; gap:10px; transition:.2s;
+}
+.btn-gold{background:linear-gradient(180deg,#f0d48a,#c99a2e); color:#17202e; box-shadow:0 10px 24px rgba(201,154,46,.35), inset 0 1px 0 #fff8}
+.btn-gold:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent; color:#f2e7cd; border:1.5px solid rgba(242,231,205,.4)}
+.btn-ghost:hover{background:rgba(242,231,205,.12)}
+.btn-ink{background:#17202e; color:#f2e7cd}
+.btn-paper{background:#f2e7cd; color:#17202e; border:1px solid #d9c49a}
+.mini-note{font-size:13px; opacity:.75; margin-top:12px}
+/* Ticket card */
+.ticket-wrap{perspective:1200px}
+.ticket{
+  background:linear-gradient(180deg,#f6ecd2,#e9d9b6);
+  color:#1d1a15; border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
+  transform:rotate(2deg); position:relative; border:1px solid #c9b183;
+}
+.ticket-top{padding:22px 22px 16px; display:flex; justify-content:space-between; gap:16px; border-bottom:2px dashed #a48d5e}
+.ticket-top h3{margin:0; font-size:26px}
+.ticket-top p{margin:6px 0 0; font-size:13.5px; color:#4a4237}
+.stamp-circle{
+  min-width:108px; min-height:108px; width:108px; height:108px; border-radius:50%;
+  border:3px double var(--stamp-red); color:var(--stamp-red);
+  display:grid; place-items:center; text-align:center; font-family:'Special Elite',monospace;
+  font-size:11px; line-height:1.2; transform:rotate(-12deg); opacity:.9; padding:8px;
+  animation:stampIn 1s .4s both;
+}
+@keyframes stampIn{from{transform:rotate(-12deg) scale(2.2); opacity:0}to{transform:rotate(-12deg) scale(1); opacity:.9}}
+.ticket-bottom{padding:16px 22px 20px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; font-size:13px}
+.ticket-bottom b{display:block; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#7a6a4d}
+.ticket-code{font-family:'Special Elite',monospace; background:#1d1a15; color:#f2e7cd; padding:10px 14px; margin:0 22px 20px; border-radius:8px; display:flex; justify-content:space-between; letter-spacing:.2em}
+.postit{
+  position:absolute; right:14px; bottom:-18px; background:#f7e489; padding:10px 14px 12px; width:190px;
+  font-family:'Caveat',cursive; font-size:19px; line-height:1.1; color:#2b240f;
+  box-shadow:0 10px 20px rgba(0,0,0,.35); transform:rotate(-4deg);
+}
+.postit::before{content:""; position:absolute; top:-10px; left:50%; transform:translateX(-50%) rotate(2deg); width:70px; height:20px; background:rgba(255,255,255,.55); border:1px solid rgba(0,0,0,.08)}
+/* sea */
+.sea{position:relative; margin-top:34px; height:170px}
+.waves svg{position:absolute; bottom:-2px; left:0; width:200%; height:130px; animation:slide 9s linear infinite}
+.waves svg:nth-child(2){opacity:.5; animation-duration:14s; animation-direction:reverse}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ship{
+  position:absolute; left:50%; bottom:56px; transform:translateX(-50%);
+  animation:bob 3.4s ease-in-out infinite; filter:drop-shadow(0 12px 18px rgba(0,0,0,.5));
+}
+@keyframes bob{0%,100%{transform:translateX(-50%) rotate(-1.5deg) translateY(0)}50%{transform:translateX(-50%) rotate(1.5deg) translateY(-8px)}}
+.smoke span{
+  position:absolute; width:14px; height:14px; border-radius:50%; background:rgba(242,231,205,.7);
+  animation:smoke 2.8s infinite; left:0; top:0;
+}
+.smoke span:nth-child(2){animation-delay:.7s}.smoke span:nth-child(3){animation-delay:1.4s}
+@keyframes smoke{from{transform:translate(0,0) scale(.6); opacity:.8}to{transform:translate(26px,-58px) scale(1.8); opacity:0}}
+/* mode chooser */
+.modes{background:#f2e7cd; padding:36px 0 8px; position:relative}
+.modes::before{
+  content:""; position:absolute; top:-18px; left:0; right:0; height:20px;
+  background:radial-gradient(circle at 10px -5px, transparent 14px, #f2e7cd 15px);
+  background-size:24px 20px;
+}
+.mode-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:18px 0 8px}
+@media(max-width:900px){.mode-grid{grid-template-columns:1fr}}
+.mode-card{
+  background:#fffaf0; border:1px solid #d9c49a; border-radius:var(--radius); padding:22px;
+  box-shadow:0 8px 24px rgba(29,26,21,.08); position:relative; overflow:hidden;
+}
+.mode-card h3{margin:8px 0 6px; font-size:24px}
+.mode-card p{font-size:14.5px; color:#4a4237; margin:0 0 14px}
+.mode-num{font-family:'Special Elite',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#7a1e1e; border:1px solid #7a1e1e55; display:inline-block; padding:4px 10px; border-radius:999px; background:#7a1e1e0d}
+.mode-card.featured{background:linear-gradient(180deg,#101f30,#1a324f); color:#f2e7cd; border-color:#101f30}
+.mode-card.featured p{color:#d9cdb2}
+.corner-tape{position:absolute; top:12px; right:-34px; transform:rotate(35deg); background:#7a1e1e; color:#fff; font-size:11px; font-weight:800; letter-spacing:.12em; padding:4px 40px; text-transform:uppercase}
+/* sections paper */
+.paper-sec{background:#f2e7cd; padding:34px 0}
+.paper{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.55), transparent 120px),
+    repeating-linear-gradient(180deg, transparent 0 30px, rgba(29,26,21,.05) 30px 31px),
+    linear-gradient(180deg,#fffaf0,#f6ecd2);
+  border:1px solid #c9b183; border-radius:20px; box-shadow:var(--shadow);
+  padding:28px; position:relative; overflow:hidden;
+}
+.paper::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(600px 200px at 90% 0%, rgba(184,138,46,.18), transparent 60%),
+             radial-gradient(500px 300px at 0% 100%, rgba(122,30,30,.12), transparent 60%);
+}
+.sec-label{font-family:'Special Elite',monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#7a1e1e}
+.sec-title{font-size:clamp(28px,4vw,44px); margin:6px 0 8px}
+.sec-desc{max-width:68ch; color:#4a4237; font-size:16px}
+.chapters{display:grid; gap:14px; margin-top:20px}
+.chap{border:1px solid #d9c49a; border-radius:14px; background:#fffdf6; overflow:hidden}
+.chap-head{width:100%; text-align:left; background:none; border:0; cursor:pointer; padding:18px 18px; display:flex; gap:14px; align-items:center}
+.chap-head:hover{background:#f6ecd2}
+.chap-n{width:44px;height:44px; border-radius:12px; display:grid; place-items:center; flex-shrink:0; font-family:'Playfair Display',serif; font-weight:900; font-size:20px; color:#fff}
+.chap h3{margin:0; font-size:20px}
+.chap-head small{display:block; font-family:'Inter',sans-serif; font-weight:500; font-size:13px; color:#6b5f4a}
+.chap-body{display:none; padding:0 18px 20px 76px; font-size:15px; color:#2f2a22}
+.chap.open .chap-body{display:block; animation:fadeUp .35s}
+@keyframes fadeUp{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+.fact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:14px 0}
+@media(max-width:800px){.fact-grid{grid-template-columns:1fr}.chap-body{padding-left:18px}}
+.fact{background:#101f30; color:#f2e7cd; border-radius:12px; padding:14px}
+.fact b{font-family:'Playfair Display',serif; font-size:26px; display:block; color:#e8c872}
+.fact span{font-size:13px; opacity:.9}
+.quote{border-left:4px solid #7a1e1e; background:#7a1e1e0d; padding:12px 14px; border-radius:0 10px 10px 0; font-style:italic; margin:12px 0}
+.hand-note{font-family:'Caveat',cursive; font-size:20px; color:#4a2b1a; background:#f7e48999; display:inline-block; padding:4px 12px; border-radius:8px; transform:rotate(-1deg); margin:8px 0}
+.tag{display:inline-block; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; background:#e9d9b6; border:1px solid #c9b183; padding:4px 10px; border-radius:999px; margin:2px 4px 2px 0}
+.dossier-link{font-size:13.5px}
+/* GAME */
+.game-sec{background:linear-gradient(180deg,#f2e7cd 0%, #0d1928 0%); padding:0}
+.game-shell{background:#0d1928; color:#f2e7cd; padding:36px 0 50px; position:relative; overflow:hidden}
+.game-shell::before{
+  content:"VICTORY • 1949 • NAPOLI — NEW YORK •"; position:absolute; top:18px; left:0; right:0; text-align:center;
+  font-family:'Special Elite',monospace; letter-spacing:.4em; font-size:11px; opacity:.25; white-space:nowrap;
+}
+.journey{display:flex; gap:8px; align-items:center; margin:26px 0 18px; flex-wrap:wrap}
+.j-step{flex:1; min-width:130px; background:rgba(255,255,255,.06); border:1px solid rgba(242,231,205,.2); border-radius:12px; padding:10px 12px; display:flex; gap:10px; align-items:center; opacity:.55}
+.j-step.active{opacity:1; border-color:var(--brass-light); background:rgba(232,200,114,.12); box-shadow:0 0 0 1px var(--brass-light) inset}
+.j-step.done{opacity:1; border-color:#5fd68a; background:rgba(95,214,138,.1)}
+.j-step .ico{width:34px;height:34px; border-radius:50%; display:grid; place-items:center; background:#f2e7cd; font-size:18px; flex-shrink:0}
+.j-step b{font-size:13px; display:block; line-height:1.2}
+.j-step small{font-size:11.5px; opacity:.75}
+.game-top{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+.timer-box{display:flex; gap:12px; align-items:center; background:rgba(255,255,255,.07); border:1px solid rgba(242,231,205,.25); padding:10px 14px; border-radius:12px}
+.timer-box .t{font-family:'Special Elite',monospace; font-size:26px; letter-spacing:.08em}
+.passport-mini{display:flex; gap:8px}
+.p-stamp{width:44px;height:44px; border-radius:50%; border:2px dashed rgba(242,231,205,.4); display:grid; place-items:center; font-size:20px}
+.p-stamp.on{border:2px solid #5fd68a; background:rgba(95,214,138,.15); border-style:solid}
+.game-card{
+  background:linear-gradient(180deg,#fffaf0,#f2e7cd); color:#1d1a15; border-radius:20px; padding:0; overflow:hidden;
+  box-shadow:0 24px 60px rgba(0,0,0,.5); border:1px solid #c9b183; margin-top:16px;
+}
+.game-head{padding:22px 26px; border-bottom:2px dashed #c9b183; display:flex; gap:16px; align-items:flex-start; background:rgba(16,31,48,.04)}
+.game-head .lvl{font-family:'Special Elite',monospace; background:#101f30; color:#e8c872; padding:6px 12px; border-radius:999px; font-size:12px; letter-spacing:.12em; white-space:nowrap}
+.game-head h3{margin:0; font-size:26px}
+.game-head p{margin:6px 0 0; color:#4a4237; font-size:15px}
+.game-body{padding:24px 26px}
+.scene{
+  background:#101f30; color:#f2e7cd; border-radius:14px; padding:18px; font-size:15px; position:relative; overflow:hidden; margin-bottom:18px;
+  border:1px solid #2a4a6b;
+}
+.scene::after{content:""; position:absolute; inset:0; background:radial-gradient(400px 120px at 20% 0%, rgba(232,200,114,.18), transparent 60%); pointer-events:none}
+.scene .lamp{position:absolute; right:18px; top:10px; width:10px; height:10px; border-radius:50%; background:#ffdf8a; box-shadow:0 0 18px 6px rgba(255,223,138,.7); animation:flick 2.2s infinite}
+@keyframes flick{0%,100%{opacity:1}10%{opacity:.6}20%{opacity:1}55%{opacity:.75}60%{opacity:1}}
+.puzzle{border:1px solid #d9c49a; background:#fffdf6; border-radius:14px; padding:18px}
+.puzzle h4{margin:0 0 8px; font-family:'Playfair Display',serif; font-size:20px}
+.puzzle p{margin:0 0 12px; font-size:14.5px; color:#4a4237}
+input[type=text],input[type=number]{width:100%; max-width:340px; padding:12px 14px; border-radius:10px; border:1.5px solid #c9b183; font-family:'Special Elite',monospace; font-size:18px; letter-spacing:.06em; background:#fff}
+input:focus{outline:2px solid #1a324f}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+.feedback{margin-top:12px; font-weight:600; font-size:14.5px; min-height:22px}
+.feedback.ok{color:#1b6b3a}.feedback.ko{color:#7a1e1e}
+.hint-box{margin-top:12px; background:#fdf3c9; border:1px dashed #b88a2e; border-radius:10px; padding:10px 12px; font-size:14px; display:none}
+.hint-box.show{display:block}
+.food-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0}
+@media(max-width:700px){.food-grid{grid-template-columns:1fr 1fr}}
+.food{border:2px solid #d9c49a; border-radius:12px; padding:12px; text-align:center; cursor:pointer; background:#fff; transition:.15s; user-select:none}
+.food .e{font-size:30px; display:block}
+.food b{font-size:13.5px}
+.food small{display:block; font-size:12px; color:#6b5f4a}
+.food.sel{border-color:#1a324f; background:#1a324f; color:#fff}
+.food.sel small{color:#d9cdb2}
+.food.ok-lock{border-color:#1b6b3a; background:#e6f4ea}
+.morse-box{font-family:'Special Elite',monospace; background:#0f1e30; color:#e8c872; border-radius:10px; padding:14px; letter-spacing:.1em; font-size:20px; text-align:center; margin:10px 0}
+.alpha{display:grid; grid-template-columns:repeat(4,1fr); gap:6px; font-family:'Special Elite',monospace; font-size:12.5px; background:#f6ecd2; border:1px solid #d9c49a; border-radius:10px; padding:10px; margin-bottom:10px}
+.opt-btn{border:1.5px solid #c9b183; background:#fff; border-radius:10px; padding:12px 14px; cursor:pointer; font-weight:600; font-size:14px}
+.opt-btn:hover{border-color:#101f30}
+.opt-btn.right{border-color:#1b6b3a; background:#e6f4ea}
+.opt-btn.wrong{border-color:#7a1e1e; background:#f9e2e2}
+.word-bank{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0}
+.word-bank button{font-family:'Caveat',cursive; font-size:22px; padding:6px 14px; border-radius:10px; border:1.5px solid #1a324f; background:#fff; cursor:pointer}
+.word-bank button.used{opacity:.3; pointer-events:none}
+.sentence{min-height:56px; border:2px dashed #b88a2e; border-radius:12px; padding:10px 12px; font-family:'Playfair Display',serif; font-size:20px; font-style:italic; background:#fffdf6}
+.game-foot{display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between; align-items:center; padding:16px 26px; border-top:1px solid #d9c49a; background:#efe1bd}
+.progress{height:10px; background:#d9c49a66; border-radius:999px; overflow:hidden; flex:1; min-width:180px}
+.progress i{display:block; height:100%; width:0; background:linear-gradient(90deg,#7a1e1e,#b88a2e); transition:.4s}
+/* finale */
+.finale{background:#f2e7cd; padding:36px 0}
+.diploma{
+  background:
+    radial-gradient(500px 200px at 50% 0%, rgba(184,138,46,.25), transparent 60%),
+    linear-gradient(180deg,#fffaf0,#f2e7cd);
+  border:3px double #7a1e1e; border-radius:8px; padding:34px 28px; text-align:center; position:relative;
+  box-shadow:var(--shadow);
+}
+.diploma h2{font-size:clamp(30px,5vw,50px); margin:6px 0}
+.big-stamp{
+  display:inline-block; border:4px double #1b6b3a; color:#1b6b3a; font-family:'Special Elite',monospace;
+  padding:10px 22px; border-radius:8px; transform:rotate(-6deg); letter-spacing:.2em; margin:12px 0; font-size:20px;
+}
+/* debate */
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}}
+.q-card{background:#fffdf6; border:1px solid #d9c49a; border-radius:14px; padding:18px}
+.q-card h4{margin:0 0 6px; font-size:18px}
+.q-card p{margin:0; font-size:14.5px; color:#4a4237}
+footer{background:#0d1928; color:#d9cdb2; padding:26px 0; font-size:13.5px}
+.reveal{opacity:0; transform:translateY(18px); transition:.6s}
+.reveal.in{opacity:1; transform:none}
+.confetti{position:fixed; top:-20px; z-index:100; pointer-events:none; animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+/* ===== FULLSCREEN + CINEMA + PUNTA-E-CLICCA 2D ===== */
+.game-shell:fullscreen{background:#0d1928; overflow-y:auto; padding:18px 0 60px}
+.game-shell:fullscreen .wrap{max-width:1180px}
+.fs-hint{font-size:12px; opacity:.7}
+.photo-fig{margin:14px 0; border:1px solid #c9b183; border-radius:12px; overflow:hidden; background:#101f30}
+.photo-fig img.zoomable{width:100%; height:260px; object-fit:contain; display:block; filter:sepia(.2) contrast(1.02); background:#101f30}
+.photo-fig figcaption{font-family:'Special Elite',monospace; font-size:12px; color:#e8c872; background:#101f30; padding:8px 12px}
+.photo-fig.light img{height:230px}
+.pnc-stage{position:relative; height:420px; border-radius:14px; overflow:hidden; border:1px solid #2a4a6b; margin-bottom:16px; background:#0f1e30 center/cover; cursor:crosshair}
+.pnc-stage .bg.zoomable{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:sepia(.1) brightness(1.05) contrast(1.0)}
+.pnc-stage .vignette{position:absolute; inset:0; background:radial-gradient(120% 100% at 50% 40%, transparent 55%, rgba(0,0,0,.65) 100%); pointer-events:none}
+.pnc-sea{position:absolute; bottom:0; left:0; right:0; height:44px; background:repeating-linear-gradient(90deg, rgba(255,255,255,.14) 0 26px, transparent 26px 52px); opacity:.35; animation:seamove 3s linear infinite}
+@keyframes seamove{to{transform:translateX(-52px)}}
+.kids{position:absolute; bottom:44px; left:8%; font-size:38px; transition:left 1s ease; filter:drop-shadow(0 6px 6px rgba(0,0,0,.6)); user-select:none}
+.hotspot{position:absolute; width:46px; height:46px; border-radius:50%; border:2px solid #e8c872; background:rgba(16,31,48,.75); color:#e8c872; font-size:20px; display:grid; place-items:center; cursor:pointer; transform:translate(-50%,-50%); animation:pulse 1.8s infinite}
+.hotspot::after{content:attr(data-label); position:absolute; top:110%; left:50%; transform:translateX(-50%); white-space:nowrap; font-family:'Special Elite',monospace; font-size:11px; background:#101f30ee; padding:3px 8px; border-radius:6px; border:1px solid #e8c87266}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,200,114,.6)}50%{box-shadow:0 0 0 12px rgba(232,200,114,0)}}
+.hotspot.found{background:#1b6b3a; border-color:#5fd68a; color:#fff; animation:none}
+.clue-bubble{position:absolute; left:50%; bottom:96px; transform:translateX(-50%); width:min(480px,92%); background:#fffaf0; color:#1d1a15; border-radius:12px; padding:12px 14px; font-size:14px; box-shadow:0 14px 30px rgba(0,0,0,.5); border:1px solid #c9b183; display:none; z-index:5}
+.clue-bubble.show{display:block; animation:fadeUp .3s}
+.clue-bubble b{font-family:'Playfair Display',serif}
+.inv-bar{display:flex; gap:8px; flex-wrap:wrap; align-items:center; background:rgba(255,255,255,.06); border:1px dashed rgba(242,231,205,.35); border-radius:10px; padding:8px 10px; margin-bottom:14px; font-size:13px}
+.inv-item{background:#f2e7cd; color:#1d1a15; border-radius:8px; padding:4px 10px; font-weight:700; font-size:12.5px; border:1px solid #c9b183}
+/* cinema transition */
+#cine{position:fixed; inset:0; z-index:200; background:#000; display:none; align-items:center; justify-content:center; overflow:hidden}
+#cine.show{display:flex}
+#cine img.kenburns.zoomable{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:sepia(.15) brightness(.75); animation:kbfull 3.4s ease-out forwards}
+@keyframes kb{from{transform:scale(1.15) translateX(-2%)}to{transform:scale(1.02) translateX(2%)}}
+@keyframes kbfull{from{transform:scale(1.12) translateX(-1%)}to{transform:scale(1.02) translateX(1%)}}
+#cine .grain{position:absolute; inset:0; opacity:.18; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation:gr .3s steps(3) infinite}
+@keyframes gr{0%{transform:translate(0,0)}33%{transform:translate(-8px,4px)}66%{transform:translate(6px,-6px)}100%{transform:translate(0,0)}}
+#cine .bars::before,#cine .bars::after{content:""; position:absolute; left:0; right:0; height:9vh; background:#000; z-index:3}
+#cine .bars::before{top:0}#cine .bars::after{bottom:0}
+#cine .cap{position:relative; z-index:4; text-align:center; color:#f2e7cd; padding:0 20px}
+#cine .cap .day{font-family:'Special Elite',monospace; letter-spacing:.3em; font-size:12px; color:#e8c872}
+#cine .cap h2{font-size:clamp(28px,5vw,54px); margin:8px 0}
+#cine .cap p{opacity:.85; font-style:italic}
+#cine .rec{position:absolute; top:11vh; right:18px; z-index:4; font-family:'Special Elite',monospace; color:#ff6b6b; font-size:13px; letter-spacing:.2em}
+#cine .rec::before{content:"● "; animation:blink 1s infinite}
+.filmstrip-band{display:flex; gap:10px; overflow-x:auto; padding:10px 2px; margin:14px 0 0}
+.filmstrip-band img.zoomable{height:100px; width:auto; max-width:220px; object-fit:contain; border-radius:8px; border:2px solid #e8c87255; filter:sepia(.4); background:#101f30}
+@media(max-width:700px){.pnc-stage{height:320px}.photo-fig img{height:170px}}
+.sentence{line-height:2.1}
+.wchip{display:inline-block; background:#fff; border:1.5px solid #1a324f; border-radius:9px; padding:1px 12px; margin:2px; font-style:normal; font-family:'Caveat',cursive; font-size:25px; color:#101f30; box-shadow:0 2px 0 #1a324f; animation:fadeUp .25s}
+.slot-empty{opacity:.55; font-size:14.5px; font-family:'Inter',sans-serif; font-style:normal}
+@media print{
+  body{background:#fff!important}
+  body::before{display:none!important}
+  body *{visibility:hidden}
+  #finale, #finale *{visibility:visible}
+  #finale{position:absolute!important; top:0; left:0; right:0; display:block!important}
+  #finale .diploma{box-shadow:none; border-width:2px}
+  #finale .row, #finale .btn{display:none!important}
+}
+
+/* LIGHTBOX */
+.lightbox{position:fixed; inset:0; z-index:500; background:rgba(5,11,19,.95); display:none; align-items:center; justify-content:center; cursor:zoom-out; padding:30px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:92%; max-height:88%; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.7); object-fit:contain; animation:lbIn .3s ease}
+@keyframes lbIn{from{opacity:0; transform:scale(.92)}to{opacity:1; transform:scale(1)}}
+.lightbox .lb-close{position:absolute; top:18px; right:22px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3); color:#fff; width:44px; height:44px; border-radius:50%; font-size:20px; cursor:pointer; display:grid; place-items:center}
+.lightbox .lb-close:hover{background:#7a1e1e}
+img.zoomable{cursor:zoom-in}
+.song-player{background:#101f30; border-radius:14px; overflow:hidden; margin:14px 0; border:1px solid #2a4a6b}
+
+/* CAROUSEL */
+.carousel{position:relative; overflow:hidden; border-radius:12px; margin:14px 0; background:#101f30}
+.carousel-track{display:flex; transition:transform .45s ease}
+.carousel-slide{min-width:100%; display:flex; align-items:center; justify-content:center; padding:0}
+.carousel-slide img{max-height:340px; max-width:100%; object-fit:contain; cursor:zoom-in; display:block}
+.carousel-btn{position:absolute; top:50%; transform:translateY(-50%); background:rgba(16,31,48,.85); color:#e8c872; border:1px solid rgba(232,200,114,.4); width:40px; height:40px; border-radius:50%; font-size:20px; cursor:pointer; display:grid; place-items:center; z-index:2}
+.carousel-btn:hover{background:#7a1e1e; color:#fff}
+.carousel-btn.prev{left:10px}
+.carousel-btn.next{right:10px}
+.carousel-dots{display:flex; gap:6px; justify-content:center; padding:8px 0 0}
+.carousel-dots button{width:8px; height:8px; border-radius:50%; border:1px solid #e8c872; background:transparent; cursor:pointer; padding:0}
+.carousel-dots button.on{background:#e8c872}
+.song-player iframe{width:100%; height:180px; border:0; display:block}
+.song-label{font-family:'Special Elite',monospace; font-size:11px; color:#e8c872; padding:10px 14px 0; letter-spacing:.14em; text-transform:uppercase}
+</style>
+<link rel="stylesheet" href="experience.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">N</span>
+      <span><small>Escape room · 1949</small><strong>Napoli → New York</strong></span>
+    </a>
+    <div class="nav-links">
+      <a href="#film">Il film</a>
+      <a href="#quaderno">Quaderno</a>
+      <a href="#gioco">Escape room</a>
+      <a href="#dibattito">Dibattito</a>
+      <a href="presentazione.html" target="_blank" rel="noopener">🎬 Presentazione</a>
+      <a class="nav-cta" href="#gioco">▶ Gioca in classe</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker"><span class="dot"></span> per terza media · prima superiore · storia + cinema + educazione civica</span>
+      <h1>Napoli <span class="arrow">→</span><br><em>New York</em></h1>
+      <p class="hero-sub">Due bambini, una stiva, un oceano. <strong>Nel 1949 Celestina e Carmine si nascondono sul piroscafo <em class="type">Victory</em></strong> per raggiungere l’America. Tu sei con loro: per arrivare a Ellis Island dovrai capire la Storia — quella vera — dell’emigrazione italiana.</p>
+      <div class="film-strip">
+        <span>🎞 soggetto di Fellini, 1948</span>
+        <span>🎬 film di Salvatores, 2024</span>
+        <span>⏱ 45 min · squadre da 3–4</span>
+      </div>
+      <div class="carousel no-print" role="region" aria-roledescription="carosello" aria-label="Fotografie del viaggio" tabindex="0">
+        <div class="carousel-track" id="carTrack">
+          <div class="carousel-slide"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Steerage%201907%20Stieglitz.jpg?width=800" alt="La terza classe nel 1907, foto di Stieglitz" title="Terza classe, 1907 — foto Stieglitz"></div>
+          <div class="carousel-slide"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Steerage%20passengers%20on%20SS%20Friedrich%20der%20Grosse.jpg?width=800" alt="Emigranti sul ponte di terza classe" title="Sul ponte della Friedrich der Grosse"></div>
+          <div class="carousel-slide"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Italian%20immigrants%20at%20Ellis%20Island.jpg?width=800" alt="Immigrati italiani a Ellis Island" title="Italiani a Ellis Island, primo '900"></div>
+          <div class="carousel-slide"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/SS%20Olympia.jpg?width=800" alt="Piroscafo a vapore del 1910" title="Piroscafo SS Olympia, 1910"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="carMove(-1)" aria-label="Foto precedente">&#8249;</button>
+        <button class="carousel-btn next" onclick="carMove(1)" aria-label="Foto successiva">&#8250;</button>
+        <div class="carousel-caption"><span id="carCaption"></span><span id="carCount" class="type"></span></div>
+        <div class="carousel-dots" id="carDots" aria-label="Scegli una fotografia"></div>
+        <p class="carousel-help">Frecce o scorri con il dito. Tocca la foto per ingrandirla.</p>
+      </div>
+      <div class="song-player" style="max-width:560px">
+        <div class="song-label">🎵 Ascolta la ballata · "Mamma mia dammi cento lire" · canzone degli emigranti</div>
+        <iframe src="https://www.youtube.com/embed/J-dqT5OMEfI?rel=0" title="Mamma mia dammi cento lire" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="mini-note type" style="font-size:11.5px">Foto d'epoca: public domain via Wikimedia Commons / Library of Congress — clicale per ingrandirle. Le scene cliccabili sono nel gioco ↓</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#gioco">🧳 Apri la stiva — inizia l’escape</a>
+        <a class="btn btn-ghost" href="presentazione.html" target="_blank" rel="noopener">🎬 Presentazione film & storia</a>
+        <a class="btn btn-ghost" href="#quaderno">📖 Prima studia il Quaderno</a>
+      </div>
+      <p class="mini-note type">Prima di partire: leggete il Quaderno (15 min), poi giocate. Tutti gli indizi per vincere sono nascosti lì dentro.</p>
+    </div>
+    <div class="ticket-wrap">
+      <div class="ticket">
+        <div class="ticket-top">
+          <div>
+            <div class="type" style="font-size:11px; letter-spacing:.2em; opacity:.7">BIGLIETTO DI TERZA CLASSE · POPPA</div>
+            <h3>S.S. Victory <span style="font-weight:400; font-style:italic">— Napoli / New York</span></h3>
+            <p>Passeggeri: <b>Celestina + Carmine</b> · Sistemazione: <b>stiva, tra i bagagli</b> · Durata: <b>2–4 settimane</b><br>
+            Bagaglio: una coperta, pane secco, una lettera della Agnese.</p>
+          </div>
+          <div class="stamp-circle">NAPOLI<br>★★★<br>1949<br>IMBARCO</div>
+        </div>
+        <div class="ticket-bottom">
+          <div><b>Posto</b>Terza classe — meno di 2 m sotto le travi</div>
+          <div><b>Aria</b>Irrespirabile: fumo, corpi, stiva</div>
+          <div><b>Destinazione</b>New York</div>
+        </div>
+        <div class="ticket-code"><span>N° 11.000.000</span><span>1876–1976</span></div>
+        <div class="postit">Il biglietto ricorda gli oltre 11 milioni di viaggi transatlantici raccontati nel Quaderno.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sea">
+    <div class="ship">
+      <div class="smoke"><span></span><span></span><span></span></div>
+      <svg width="300" height="86" viewBox="0 0 300 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="118" y="6" width="10" height="34" fill="#2b3a4f"/><rect x="138" y="6" width="10" height="34" fill="#2b3a4f"/>
+        <ellipse cx="123" cy="4" rx="16" ry="6" fill="#4a4237" opacity=".7"/><ellipse cx="143" cy="4" rx="16" ry="6" fill="#4a4237" opacity=".5"/>
+        <path d="M20 46 H280 L262 70 H38 Z" fill="#101f30" stroke="#e8c872" stroke-width="2"/>
+        <rect x="60" y="50" width="14" height="10" rx="2" fill="#e8c872" opacity=".9"/><rect x="80" y="50" width="14" height="10" rx="2" fill="#e8c872" opacity=".6"/><rect x="100" y="50" width="14" height="10" rx="2" fill="#e8c872" opacity=".9"/><rect x="200" y="50" width="14" height="10" rx="2" fill="#e8c872" opacity=".6"/>
+        <text x="150" y="66" text-anchor="middle" fill="#f2e7cd" font-family="Georgia" font-size="13" letter-spacing="4">VICTORY</text>
+      </svg>
+    </div>
+    <div class="waves">
+      <svg viewBox="0 0 1200 130" preserveAspectRatio="none"><path d="M0 70 Q75 40 150 70 T300 70 T450 70 T600 70 T750 70 T900 70 T1050 70 T1200 70 V130 H0 Z" fill="#1d4e5f"/><path d="M0 85 Q75 60 150 85 T300 85 T450 85 T600 85 T750 85 T900 85 T1050 85 T1200 85 V130 H0 Z" fill="#24496e"/></svg>
+      <svg viewBox="0 0 1200 130" preserveAspectRatio="none"><path d="M0 90 Q100 70 200 90 T400 90 T600 90 T800 90 T1000 90 T1200 90 V130 H0 Z" fill="#0f2f3d" opacity=".8"/></svg>
+    </div>
+  </div>
+</header>
+
+<section class="modes">
+  <div class="wrap">
+    <div class="mode-grid">
+      <div class="mode-card reveal">
+        <span class="mode-num">Modalità A · 15 min</span>
+        <h3>📖 Leggi e capisci</h3>
+        <p>Il <b>Quaderno di bordo</b>: 5 capitoli brevi con numeri, foto d’epoca raccontate, citazioni vere. Si può leggere da soli, a coppie o con la LIM.</p>
+        <a href="#quaderno" class="btn btn-ink" style="font-size:14px; padding:10px 16px">Apri il Quaderno ↓</a>
+      </div>
+      <div class="mode-card featured reveal">
+        <div class="corner-tape">in classe</div>
+        <span class="mode-num" style="color:#e8c872; border-color:#e8c87255">Modalità B · 45 min</span>
+        <h3>🗝️ Gioca l’escape room</h3>
+        <p>5 stanze: <b>Stiva → Cambusa → Tempesta → Ellis Island → Little Italy</b>. Timer, timbri sul passaporto, aiuti. Si vince solo se si è capito il Quaderno.</p>
+        <a href="#gioco" class="btn btn-gold" style="font-size:14px; padding:10px 16px">Entra nella stiva →</a>
+      </div>
+      <div class="mode-card reveal">
+        <span class="mode-num">Modalità C · 15 min</span>
+        <h3>💬 Parliamone insieme</h3>
+        <p>Dopo il viaggio, confrontate le vostre idee su <b>solidarietà, pregiudizi e migrazione</b>. Una voce per squadra, con esempi dal film e dalla storia.</p>
+        <a href="#dibattito" class="btn btn-paper" style="font-size:14px; padding:10px 16px">Apri il dibattito ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paper-sec" id="film">
+  <div class="wrap">
+    <div class="paper reveal">
+      <div class="sec-label">Capitolo zero · il film che giochiamo</div>
+      <h2 class="sec-title">Il sogno ritrovato in un baule: da Fellini a Salvatores</h2>
+      <p class="sec-desc">Tutto parte da un fatto vero e quasi fiabesco. Nel <b>1948 Federico Fellini</b> — allora giovane sceneggiatore — scrive con Tullio Pinelli una favola in tre atti: due bambini scappano da una Napoli distrutta dalla guerra per andare in America. Non l’ha mai girata. Non era mai stato in America: <i>“Napoli la conosciamo, ma in America non ci siamo mai stati”</i>.</p>
+      <div class="two-col" style="margin-top:16px">
+        <div>
+          <div class="quote">Nel 2006 un amico di Pinelli ritrova il soggetto in un vecchio baule destinato al macero. Salvatores lo legge e dice: è una spinta meravigliosa. Ne fa <b>“Napoli – New York” (2024)</b>.</div>
+          <p style="font-size:15px">Salvatores non copia Fellini: lo continua. Fellini dà la <b>favola ottimista</b>; Salvatores aggiunge la <b>realtà dura</b> — fame, discriminazione (“venite dall’Africa?”), processo di Agnese, Mano Nera — ma con uno sguardo da bambini: <b>realismo magico</b>. Il suo messaggio: <i>“Se guardi bene qualcuno di diverso, puoi amarlo”</i> e il film è, dice lui, <b>un film sulla solidarietà</b>.</p>
+          <span class="hand-note">✎ idea per la classe: Fellini immagina l’America senza averla vista — come noi immaginiamo il futuro. Cosa cambia quando un sogno incontra la realtà?</span>
+        </div>
+        <div style="background:#101f30; color:#f2e7cd; border-radius:14px; padding:18px">
+          <div class="type" style="font-size:12px; letter-spacing:.18em; color:#e8c872">SCHEDA FILM · DA COPIARE SUL QUADERNO</div>
+          <h3 style="margin:8px 0">Napoli – New York</h3>
+          <div style="font-size:14px; line-height:1.7">
+            <div>📍 <b>Quando:</b> 1949, Napoli distrutta → New York</div>
+            <div>👧🧒 <b>Chi:</b> Celestina e Carmine, orfani e clandestini in stiva</div>
+            <div>🚢 <b>Nave:</b> <span class="type">Victory</span> (ricorda <i>La nave va</i> di Fellini)</div>
+            <div>👮 <b>A New York:</b> Agnese sotto processo, commissario di bordo Garofalo (Favino), cuoco George che li aiuta</div>
+            <div>💡 <b>Temi:</b> povertà ≠ straniero · solidarietà · donne · pregiudizio · mafia</div>
+          </div>
+          <div class="quote" style="border-color:#e8c872; background:rgba(232,200,114,.1); color:#f2e7cd; margin-bottom:0">“Tu non sei uno straniero, sei povero: se fossi ricco, non saresti straniero da nessuna parte.”</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paper-sec" id="quaderno" style="padding-top:0">
+  <div class="wrap">
+    <div class="paper reveal">
+      <div class="sec-label">📖 Quaderno di bordo · leggi qui, serve per vincere</div>
+      <h2 class="sec-title">Cinque verità che ti aprono cinque porte</h2>
+      <p class="sec-desc">Ogni capitolo nasconde la soluzione di una stanza dell’escape. Leggi con attenzione i numeri <b>in grassetto</b>: sono le chiavi. Clicca per aprire.</p>
+      <div class="row" style="margin-top:12px">
+        <a class="btn btn-gold" href="presentazione.html?start=1" target="_blank" rel="noopener" style="font-size:15px">🎬 Apri le slide del viaggio</a>
+        <span class="type" style="font-size:12.5px; color:#6b5f4a">12 slide · frecce ← → · note per il relatore · oppure leggi qui sotto ↓</span>
+      </div>
+      <div class="chapters">
+
+        <div class="chap open">
+          <button class="chap-head"><span class="chap-n" style="background:#7a1e1e">1</span><span><h3>Perché si partiva: la fame che spinge via</h3><small>5 min · le ragioni della partenza</small></span></button>
+          <div class="chap-body">
+            <p>Tra <b>1876 e 1976 più di 11 milioni di italiani</b> attraversano l’oceano. Nel primo decennio del ’900 partono in media <b>300.000 persone all’anno</b> da quattro porti: <b>Genova, Napoli, Palermo, Messina</b>. Tra 1880 e 1920 arrivano negli USA <b>15 milioni</b> di immigrati, di cui <b>quasi 2,5 milioni italiani</b>, quasi tutti dal Sud: Sicilia, Calabria, Campania.</p>
+            <div class="fact-grid">
+              <div class="fact"><b>11 mln</b><span>italiani emigrati in 100 anni (1876–1976)</span></div>
+              <div class="fact"><b>4 porti</b><span>Genova · Napoli · Palermo · Messina</span></div>
+              <div class="fact"><b>30–50%</b><span>erano “birds of passage”: andavano, guadagnavano, tornavano</span></div>
+            </div>
+            <p>Non si scappa per avventura: si scappa per fame, dopo guerre e miseria. E molti, contrariamente a ciò che pensiamo, <b>tornavano</b>.</p>
+            <span class="tag">🔑 servirà: un numero da 8 cifre? no — un totale famoso</span> <span class="tag">🚢 nave del film: Victory</span>
+          </div>
+        </div>
+
+        <div class="chap">
+          <button class="chap-head"><span class="chap-n" style="background:#1a324f">2</span><span><h3>La traversata: 3 settimane all’inferno</h3><small>chiave per la Stanza 1 + 2 — stiva e cambusa</small></span></button>
+          <div class="chap-body">
+            <p>Il viaggio dura <b>da 2 a 4 settimane</b>. I più poveri viaggiano in <b>terza classe / poppa</b>: camerate basse, <b>meno di 2 metri</b> sotto le travi, piene di gente. Celestina e Carmine stanno ancora peggio: <b>clandestini in stiva</b>, tra merci e bagagli.</p>
+            <p>L’aria è <b>irrespirabile</b> — fumo delle caldaie, corpi, escrementi. Frank Capra la ricorda come <i>“miseria e fetore”</i>. Il cibo: <b>pane secco, pastasciutta scotta, farina, orzo</b> e <b>acqua a volte rossastra</b> perché i serbatoi di ferro perdevano cemento e ruggine. Niente formaggio fresco, uova o pomodori: quelli sono un lusso.</p>
+            <div class="quote">Durante le tempeste, per non impazzire dalla paura, i migranti cantavano <b></b> — la ballata della ragazza che parte per l’America e muore in mare.</div>
+            <figure class="photo-fig light" style="margin:12px 0">
+              <img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Steerage%201907%20Stieglitz.jpg?width=800" alt="La Steerage nel 1907 fotografata da Alfred Stieglitz">
+              <figcaption>📷 1907 · Alfred Stieglitz, “The Steerage”: due ponti affollati di migranti. Così doveva apparire la Victory dal ponte di terza classe.</figcaption>
+            </figure>
+            <p>Malattie killer, soprattutto per i bambini: <b>morbillo e malaria</b>. Solo sulla nave <i>Ravenna</i> nel 1907 il morbillo uccide <b>65 persone, quasi tutti bambini</b>. La legge del 1901 esiste ma le compagnie la evadono per profitto.</p>
+            <span class="hand-note">✎ trattenete il fiato 10 secondi e rileggete: così, per settimane, senza finestre.</span>
+          </div>
+        </div>
+
+        <div class="chap">
+          <button class="chap-head"><span class="chap-n" style="background:#1d4e5f">3</span><span><h3>Naufragi e SOS: il mare che non perdona</h3><small>chiave per la Stanza 3 — la radio</small></span></button>
+          <div class="chap-body">
+            <p>Il mare fa paura davvero. Quattro tragedie entrano nella memoria di tutti:</p>
+            <div class="fact-grid">
+              <div class="fact"><b>Utopia · 1891</b><span>576 morti</span></div>
+              <div class="fact"><b>Sirio · 1906</b><span>292 morti</span></div>
+              <div class="fact"><b>Mafalda · 1927</b><span>385 morti</span></div>
+            </div>
+            <p>Nel gioco dovrai usare il <b>codice Morse</b> e l’alfabeto dei marinai. E ricorda la festa dell’equatore, il <b>“festival di Nettuno”</b>: gavettoni d’acqua e un pasto migliore per chi andava in Sud America.</p>
+            <span class="tag">··· SOS = ··· ––– ···</span> <span class="tag">🔑 una nave del 1906…</span>
+          </div>
+        </div>
+
+        <div class="chap">
+          <button class="chap-head"><span class="chap-n" style="background:#b88a2e">4</span><span><h3>Ellis Island: l’isola che decide tutto</h3><small>chiave per la Stanza 4 — l’ispezione</small></span></button>
+          <div class="chap-body">
+            <p><b>Ellis Island apre il 1° gennaio 1892</b> e fino al 1954 vede passare <b>oltre 12 milioni di persone</b>. La prima cosa che vedi è la <b>Statua della Libertà</b>. Poi: scale, fila, 3–5 ore di controlli.</p>
+            <p>Prima e seconda classe: controllo veloce a bordo. <b>Terza classe: tutti a Ellis Island</b>. Visita agli occhi (il terrore si chiama <b>tracoma</b>: il medico ti rovescia la palpebra con <b>un bottone o un dito</b>), controllo ai polmoni, test di intelligenza per sembrare “abili al lavoro”. Se sembri strano o non capisci la lingua rischi l’etichetta di “alienato”.</p>
+            <div class="fact-grid">
+              <div class="fact"><b>1892</b><span>apertura di Ellis Island</span></div>
+              <div class="fact"><b>&lt; 2%</b><span>respinti — ma la paura è del 100%</span></div>
+              <div class="fact"><b>bottone</b><span>lo strumento del test del tracoma</span></div>
+            </div>
+            <p>Motivi di respingimento: malattia contagiosa, povertà estrema, precedenti penali. Fino al <b>1907 non servono passaporto né visto</b>: basta dichiarare a voce chi sei.</p>
+            <figure class="photo-fig light" style="margin:12px 0">
+              <img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Italian%20immigrants%20at%20Ellis%20Island.jpg?width=800" alt="Gruppo di immigrati italiani a Ellis Island">
+              <figcaption>📷 Ellis Island, primo ’900 · uomini italiani in attesa di lasciare l’isola. Guarda le facce: stanchezza e speranza insieme.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="chap">
+          <button class="chap-head"><span class="chap-n" style="background:#101f30">5</span><span><h3>Little Italy: solidarietà e Mano Nera</h3><small>chiave per la Stanza 5 — l’indirizzo finale</small></span></button>
+          <div class="chap-body">
+            <p>A New York gli italiani si stringono in <b>Little Italy</b>. C’è <b>solidarietà</b> (l’aiuto di chi condivide il cibo con i bambini) ma anche sfruttamento: la <b>Mano Nera / Black Hand</b> manda lettere con una mano nera disegnata e chiede soldi ai negozianti. Capo noto: <b>Giuseppe Morello da Corleone</b>.</p>
+            <p>Poi il proibizionismo (1920–33) arricchisce le gang; nel 1931 <b>Maranzano</b> crea le <b>5 famiglie</b> e <b>Lucky Luciano</b> la <b>Commissione</b>. Nel 1891 a New Orleans avviene il più grande linciaggio della storia USA: <b>11 italiani uccisi</b> dopo l’omicidio del capitano Hennessy.</p>
+            <div class="quote">Il cuore del film resta la frase di Salvatores: la solidarietà ci salva dall’egoismo. È anche la password finale del gioco.</div>
+            <span class="tag">🔑 parola finale: 12 lettere…</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAME -->
+<section class="game-shell" id="gioco">
+  <div class="wrap">
+    <div class="sec-label" style="color:#e8c872">🗝️ Escape room · gioca qui — anche con la LIM</div>
+    <h2 class="sec-title" style="color:#f2e7cd; margin-bottom:4px">La stiva della Victory</h2>
+    <p style="color:#d9cdb2; max-width:70ch; margin:0">Squadre da 3–4, un <b>passaporto di squadra</b> da timbrare, <b>45 minuti</b>. Se resti bloccato, apri un <b>indizio</b> (costa punti) o torna al Quaderno: la soluzione è sempre lì.</p>
+
+    <div class="journey" id="journey" aria-label="Le cinque tappe del viaggio">
+      <button type="button" class="j-step" data-s="0"><span class="ico">🧳</span><span><b>1 · Stiva</b><small>il lucchetto</small></span></button>
+      <button type="button" class="j-step" data-s="1"><span class="ico">🍲</span><span><b>2 · Cambusa</b><small>le razioni</small></span></button>
+      <button type="button" class="j-step" data-s="2"><span class="ico">📻</span><span><b>3 · Tempesta</b><small>radio Morse</small></span></button>
+      <button type="button" class="j-step" data-s="3"><span class="ico">👁️</span><span><b>4 · Ellis Island</b><small>l’ispezione</small></span></button>
+      <button type="button" class="j-step" data-s="4"><span class="ico">✉️</span><span><b>5 · Little Italy</b><small>la lettera</small></span></button>
+    </div>
+
+    <div class="game-top">
+      <div class="timer-box">
+        <label class="team-label" for="teamName">Squadra<input id="teamName" type="text" maxlength="60" placeholder="Squadra Victory" autocomplete="off"></label>
+        <button class="btn btn-gold" id="btnTimer" style="padding:8px 14px; font-size:14px">▶ Avvia 45:00</button>
+        <span class="t" id="timer" role="timer" aria-label="Tempo rimasto">45:00</span>
+        <span class="type" id="score" style="font-size:13px; opacity:.85">⭐ punti: 1000</span>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap">
+        <button class="btn btn-ghost" id="btnFS" style="padding:10px 14px; font-size:13.5px">⛶ Tutto schermo</button>
+        <button class="btn btn-ghost" id="btnReset" style="padding:10px 14px; font-size:13.5px">↺ Nuova partita</button>
+        <span class="type fs-hint" style="font-size:12px; letter-spacing:.12em">PASSAPORTO:</span>
+        <div class="passport-mini" id="pmini"><span class="p-stamp">①</span><span class="p-stamp">②</span><span class="p-stamp">③</span><span class="p-stamp">④</span><span class="p-stamp">⑤</span></div>
+      </div>
+    </div>
+    <p id="gameStatus" class="game-status" role="status">Esplora la scena e risolvi l’enigma. Avvia il timer quando la squadra è pronta.</p>
+    <div class="inv-bar" id="invBar"><span class="type" style="font-size:11.5px; letter-spacing:.14em; opacity:.8">🎒 INVENTARIO:</span><span id="invItems" style="display:flex; gap:6px; flex-wrap:wrap"><i style="opacity:.6">clicca gli oggetti luminosi nelle scene…</i></span></div>
+
+    <div class="game-card">
+      <div class="game-head">
+        <span class="lvl" id="lvlLabel">STANZA 1 / 5</span>
+        <div><h3 id="lvlTitle" tabindex="-1">Il lucchetto della stiva</h3><p id="lvlSub">Siete nascosti tra i bagagli. Il marinaio ha chiuso il cancello…</p></div>
+      </div>
+      <div class="game-body" id="lvlBody"><!-- injected --></div>
+      <div class="game-foot">
+        <div><span id="progressText" class="type">0 di 5 timbri</span><div class="progress" role="progressbar" aria-label="Stanze completate" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><i id="pbar"></i></div></div>
+        <div class="row" style="margin:0">
+          <button class="btn btn-paper" id="btnBack" disabled>← Stanza precedente</button>
+          <button class="btn btn-paper" id="btnHint" style="padding:10px 16px; font-size:14px">💡 Indizio (−50)</button>
+          <button class="btn btn-ink" id="btnNext" disabled style="padding:10px 16px; font-size:14px">Prossima stanza →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finale" id="finale" style="display:none">
+  <div class="wrap">
+    <div class="diploma reveal in">
+      <div class="type" style="font-size:12px; letter-spacing:.25em">REPUBBLICA DELLE DUE SPONDE · UFFICIO DI ELLIS ISLAND</div>
+      <h2>Ammessi! 🎉</h2>
+      <div class="big-stamp" id="finalStamp">VIAGGIO COMPLETATO</div>
+      <p style="max-width:60ch; margin:0 auto">Bravi, squadra <b id="teamNameOut">Victory</b>! Avete superato stiva, fame, tempesta, visita medica e Mano Nera.<br>
+      La Storia vi dà ragione: tra 1892 e 1954 <b>oltre 12 milioni</b> passarono di qui, <b>meno del 2% respinti</b>, ma ognuno con la paura in gola.</p>
+      <div class="fact-grid" style="max-width:640px; margin:16px auto 0">
+        <div class="fact"><b id="statTime">—</b><span>tempo usato</span></div>
+        <div class="fact"><b id="statScore">—</b><span>punti finali</span></div>
+        <div class="fact"><b id="statHints">—</b><span>indizi usati</span></div>
+      </div>
+      <div class="row" style="justify-content:center; margin-top:16px">
+        <button class="btn btn-ink" onclick="window.print()">🖨️ Stampa il diploma</button>
+        <a class="btn btn-gold" href="#dibattito">💬 Vai al dibattito finale ↓</a>
+      </div>
+      <p class="hand" style="font-size:22px; margin:14px 0 0">“Se guardi bene qualcuno di diverso, puoi amarlo.” — G. Salvatores</p>
+    </div>
+  </div>
+</section>
+
+<section class="paper-sec" id="dibattito">
+  <div class="wrap">
+    <div class="paper reveal">
+      <div class="sec-label">💬 Atto finale · 15 minuti di dibattito</div>
+      <h2 class="sec-title">Ora che siete sbarcati, parliamone</h2>
+      <p class="sec-desc">Scegliete 2 domande, una voce per squadra. Non c’è risposta giusta: conta collegare film, storia e oggi.</p>
+      <div class="two-col" style="margin-top:14px">
+        <div class="q-card"><h4>1 · Fiaba o realtà?</h4><p>Salvatores mostra fame e razzismo con occhi da bambini. Addolcisce o rende più universale il dolore? Fareste un finale più duro o più speranzoso?</p></div>
+        <div class="q-card"><h4>2 · Sognare senza aver visto</h4><p>Fellini non era mai stato in America eppure l’ha raccontata. Si può raccontare ciò che non si è vissuto? Quando l’immaginazione aiuta e quando tradisce?</p></div>
+        <div class="q-card"><h4>3 · Chi è “straniero”?</h4><p>“Non sei straniero, sei povero: se fossi ricco non saresti straniero da nessuna parte.” Cosa significa oggi a scuola, sui social, nello sport?</p></div>
+        <div class="q-card"><h4>4 · Agnese</h4><p>Arrestata per essersi difesa dal marito violento, sostenuta dalle donne italo-americane. Cosa ci dice di donne, giustizia e migrazione ieri e oggi?</p></div>
+        <div class="q-card"><h4>5 · Solidarietà vs Mano Nera</h4><p>Stessa comunità, due strade: il cuoco George che condivide il pane e chi estorce con la mano nera. Perché la povertà può generare sia aiuto che crimine?</p></div>
+        <div class="q-card"><h4>6 · Birds of passage</h4><p>Il 30–50% tornava in Italia. Emigrare è sempre “partire per sempre”? Conoscete storie di andate e ritorni nella vostra famiglia?</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer>
+  <div class="wrap" style="display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; align-items:center">
+    <div><b style="color:#fff">Napoli → New York · Quaderno + Escape room</b><br>Basato sul dossier “Architettura narrativa e meccaniche ludiche” · Film: soggetto F. Fellini & T. Pinelli (1948), regia G. Salvatores (2024) · Uso didattico libero in classe.</div>
+    <div class="type" style="font-size:12px; opacity:.8">fatto con carta, inchiostro e un po’ di mare · 1949 <a class="teacher-entry" href="docente.html" target="_blank" rel="noopener" aria-label="Apri i materiali di conduzione" title="Materiali di conduzione">⚓</a></div>
+  </div>
+</footer>
+
+<!-- Transizione stile cinema tra le stanze -->
+<div id="cine" aria-hidden="true">
+  <button id="skipCine" class="btn btn-paper">Salta introduzione →</button>
+  <img class="kenburns" id="cineImg" src="" alt="">
+  <div class="grain"></div><div class="bars"></div>
+  <div class="rec">● REC 1949</div>
+  <div class="cap"><div class="day" id="cineDay">GIORNO 1 — NAPOLI</div><h2 id="cineTitle">La Victory salpa…</h2><p id="cineSub">…</p></div>
+</div>
+
+<script src="game.js" defer></script>
+<script src="gallery.js" defer></script>
+
+<dialog class="lightbox" id="lightbox" aria-label="Fotografia ingrandita">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="Chiudi la fotografia">✕</button>
+  <img id="lbImg" alt="Foto ingrandita">
+  <p id="lbCaption"></p>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* Shared controls, readable layouts and small-screen support. */
+:focus-visible{outline:3px solid #b88a2e;outline-offset:4px}
+button,input{font:inherit}
+button:disabled{opacity:.45;cursor:not-allowed;transform:none!important}
+.nav-links{justify-content:flex-end}
+.teacher-entry{display:inline-flex;align-items:center;justify-content:center;min-width:32px;min-height:32px;text-decoration:none;color:inherit;vertical-align:middle}
+.teacher-entry:hover{color:#e8c872}
+.carousel{border:1px solid #e8c87255;border-radius:16px;box-shadow:0 18px 40px #0003}
+.carousel-track{align-items:stretch;touch-action:pan-y}
+.carousel-slide{position:relative;flex:0 0 100%;min-width:0;height:300px;background:#0a1724}
+.carousel-slide img{width:100%;height:100%;max-height:none;object-fit:contain}
+.carousel-slide.image-unavailable::after{content:attr(data-fallback);padding:50px 60px;text-align:center;color:#e8c872;font-family:'Playfair Display',serif;font-size:27px}
+.carousel-caption{min-height:62px;padding:12px 18px;display:flex;gap:16px;align-items:center;justify-content:space-between;color:#f2e7cd;border-top:1px solid #e8c87233;font-size:13px}
+#carCount{flex-shrink:0;color:#e8c872;letter-spacing:.1em}
+.carousel-btn{top:150px;width:44px;height:44px}
+.carousel-dots{padding:0;gap:4px}
+.carousel-dots button{width:32px;height:32px;border:0;display:grid;place-items:center;border-radius:5px}
+.carousel-dots button::after{content:'';width:7px;height:7px;border:1px solid #e8c872;border-radius:50%}
+.carousel-dots button.on{background:transparent}
+.carousel-dots button.on::after{background:#e8c872;box-shadow:0 0 0 3px #e8c87222}
+.carousel-help{font-size:11px;text-align:center;color:#d9cdb2;margin:0;padding:0 12px 12px}
+.lightbox{border:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;color:#f2e7cd;flex-direction:column;gap:12px}
+.lightbox[open]{display:flex}
+.lightbox::backdrop{background:#050b13}
+.lightbox p{font-size:14px;text-align:center;margin:0;max-width:65ch}
+.game-shell{scroll-margin-top:85px}
+.game-shell .sec-title{font-size:clamp(34px,4.5vw,54px)}
+.game-top{gap:14px}
+.timer-box{flex-wrap:wrap;gap:14px}
+.team-label{display:flex;flex-direction:column;font-size:11px;color:#e8c872;letter-spacing:.06em}
+.team-label input[type=text]{max-width:190px;padding:6px 0;border:0;border-radius:0;border-bottom:1px solid #e8c87266;background:transparent;color:#f2e7cd;font-family:inherit;font-size:14px;letter-spacing:0}
+.team-label input::placeholder{color:#d9cdb2}
+.game-status{margin:16px 0 12px;color:#e8c872;font-size:14px;min-height:23px}
+.j-step{color:inherit;font-family:inherit;text-align:left;cursor:pointer;transition:background .2s,border-color .2s}
+.j-step:disabled{cursor:not-allowed;opacity:.45}
+.j-step.active{opacity:1}
+.game-card{border-radius:16px}
+.game-head{padding:24px 28px}
+.game-head h3{font-size:clamp(24px,3.2vw,34px)}
+.game-head .lvl{border-radius:5px}
+.game-body{padding:24px 28px}
+.game-body .puzzle{padding:22px;border-radius:10px}
+.puzzle h4{font-size:24px}
+.puzzle p,.scene{font-size:16px}
+.puzzle input{min-height:48px}
+.puzzle label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.food{font:inherit;color:inherit}
+.food:focus-visible{outline-offset:2px}
+.food.sel{box-shadow:0 0 0 2px #e8c872 inset}
+.word-bank button.used{pointer-events:auto}
+.word-bank button.used::after{content:' ✓';font-size:15px}
+.wchip{cursor:pointer}
+.scene{display:none}
+.pnc-stage{height:360px;background:linear-gradient(135deg,#24465a,#0e2033 65%);cursor:default}
+.pnc-stage .bg{height:100%;width:100%;object-fit:cover;filter:sepia(.25) brightness(.64)}
+.pnc-stage::before{content:'ESPLORA LA SCENA';position:absolute;z-index:1;left:18px;top:14px;color:#f2e7cd;font-size:10px;letter-spacing:.18em;pointer-events:none}
+.hotspot{animation:none;box-shadow:0 0 0 6px #e8c87222}
+.hotspot::after{font-family:inherit;font-size:12px}
+.hotspot:focus-visible,.hotspot:hover{background:#e8c872;color:#101f30}
+.clue-bubble{bottom:18px;max-height:65%;overflow:auto;z-index:5}
+.clue-bubble.show{animation:none}
+.explore-help{font-size:12px;color:#6b5f4a;margin:0 0 16px}
+.solved-banner{background:#e6f4ea;border-left:4px solid #1b6b3a;padding:12px 16px;margin:0 0 18px;color:#15522c;font-weight:600}
+#progressText{font-size:11px;display:block;color:#4a4237;margin-bottom:5px}
+.game-foot>.row{gap:8px}
+.progress{min-width:150px;height:6px}
+#cine{flex-direction:column}
+#cine .cap{max-width:750px}
+#skipCine{position:absolute;right:22px;bottom:22px;z-index:10}
+.game-shell:fullscreen #cine{position:fixed}
+@media(max-width:900px){.nav-inner{gap:12px;flex-wrap:wrap}.nav-links{justify-content:flex-start}.nav-links a{font-size:12px;padding:5px 8px}.hero{padding-top:32px}.ticket-wrap{margin:10px auto 20px;max-width:560px;width:100%}.hero-grid{gap:20px}.hero-sub{max-width:65ch}.carousel{max-width:600px}.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.j-step{min-width:0;justify-content:center;padding:10px 5px}.j-step .ico{display:none}.j-step small{display:none}.j-step b{font-size:11px}.game-foot{gap:18px}.game-foot>.row{flex:1;justify-content:flex-end}}
+@media(max-width:540px){.wrap{padding:0 16px}.nav-inner{padding:10px 16px}.nav-links a{min-height:32px}.brand small{font-size:9px}.kicker{font-size:10px;border-radius:8px}.hero h1{font-size:52px}.hero-sub{font-size:16px}.carousel-slide{height:240px}.carousel-btn{top:120px}.carousel-caption{font-size:12px;min-height:65px}.timer-box{width:100%;justify-content:space-between;padding:12px}.team-label{width:100%}.team-label input[type=text]{max-width:100%}.timer-box .t{font-size:25px}.game-head{padding:18px;flex-direction:column;gap:12px}.game-head p{font-size:14px}.game-body{padding:14px}.game-body .puzzle{padding:16px}.puzzle h4{font-size:21px}.puzzle p{font-size:14px}.pnc-stage{height:300px}.hotspot{width:42px;height:42px}.hotspot::after{font-size:10px}.food-grid{grid-template-columns:1fr 1fr}.food{padding:10px}.food small{font-size:11px}.game-foot{padding:16px}.game-foot>.row{justify-content:flex-start}.game-foot .btn{font-size:12px!important;padding:10px!important}.passport-mini{gap:5px}.p-stamp{width:34px;height:34px}.paper{padding:20px}.alpha{grid-template-columns:repeat(4,1fr);font-size:11px}.ticket-top{padding:18px;gap:8px}.ticket-top h3{font-size:23px}.stamp-circle{min-width:85px;min-height:85px;width:85px;height:85px;font-size:9px}.ticket-bottom{padding:14px;gap:6px;font-size:11px}.postit{bottom:-10px;width:155px;font-size:16px}.word-bank button{min-height:44px}.lightbox{padding:65px 16px 24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media print{.nav,.hero,.modes,.game-shell,.paper-sec,footer,#cine,.lightbox{display:none!important}#finale{display:block!important;background:white}#finale .wrap{max-width:none}#finale .diploma{box-shadow:none}#finale .row{display:none}}

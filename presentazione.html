@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Napoli – New York · Il film, il viaggio, la storia</title>
+<meta name="description" content="12 slide per la classe: Fellini e Salvatores, il viaggio degli emigranti e cinque enigmi da risolvere insieme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Special+Elite&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="presentazione.css">
+<link rel="preload" href="assets/napoli-partenza.png" as="image" fetchpriority="high">
+<script src="presentazione.js" defer></script>
+</head>
+<body>
+<main id="landing">
+  <div class="landing-copy">
+    <p class="eyebrow">UNA STORIA DA ATTRAVERSARE</p>
+    <h1>Napoli<br><em>New York</em></h1>
+    <p class="land-sub">Due bambini attraversano l’oceano.<br>Dietro la loro avventura, la storia di milioni di partenze.</p>
+    <button class="primary" id="startDeck">Inizia la presentazione <span aria-hidden="true">↗</span></button>
+    <p class="land-meta">12 scene / circa 10 minuti / un viaggio da vivere insieme</p>
+    <a class="back-link" href="index.html">← Torna al quaderno e al gioco</a>
+  </div>
+  <figure class="landing-photo">
+    <img src="assets/napoli-partenza.png" alt="Illustrazione: due bambini con una valigia davanti al porto di Napoli all’alba" fetchpriority="high">
+    <figcaption>IL VIAGGIO COMINCIA QUI<br><span>Illustrazione originale generata con IA</span></figcaption>
+  </figure>
+</main>
+<section id="deck" hidden aria-label="Presentazione Napoli New York" aria-hidden="true">
+  <div class="deck-progress" aria-hidden="true"><i id="dBar"></i></div>
+  <header class="deck-top">
+    <a class="deck-brand" href="index.html">Napoli <em>New York</em></a>
+    <span class="deck-sec" id="dSec"></span>
+    <span class="deck-count" id="dCount"></span>
+    <div class="deck-tools">
+      <button id="btnDOver" aria-label="Indice delle slide (G)" title="Indice delle slide (G)">▦<span>Indice</span></button>
+      <button id="btnDNotes" aria-label="Note del relatore (N)" aria-expanded="false" aria-controls="dNotes" title="Note relatore (N)">✎<span>Note</span></button>
+      <button id="btnMotion" aria-label="Disattiva le animazioni" aria-pressed="true" title="Animazioni attive">◈<span>Effetti</span></button>
+      <button id="btnFS" aria-label="Schermo intero (F)" title="Schermo intero (F)">⛶<span>Schermo</span></button>
+      <button id="closeDeck" aria-label="Torna alla copertina" title="Torna alla copertina">×<span>Esci</span></button>
+    </div>
+  </header>
+  <div class="deck-stage">
+    <button class="deck-arrow" id="dPrev" aria-label="Slide precedente">‹</button>
+    <div class="deck-viewport" id="dViewport" tabindex="0" aria-label="Contenuto della slide">
+      <article id="dCard" class="slide"></article>
+    </div>
+    <button class="deck-arrow" id="dNext" aria-label="Slide successiva">›</button>
+  </div>
+  <aside class="deck-notes" id="dNotes" hidden aria-label="Note del relatore"><b>PER IL RELATORE</b><p id="dNoteTxt"></p><p id="dSources"></p></aside>
+  <footer class="deck-bottom">
+    <div id="dDots" aria-label="Vai a una slide"></div>
+    <div class="journey-position" aria-label="Tappe del viaggio"><span data-act="0">Napoli</span><i aria-hidden="true"></i><span data-act="1">Atlantico</span><i aria-hidden="true"></i><span data-act="2">New York</span></div>
+    <p class="deck-hint">← → naviga <span>G indice / N note / F schermo intero</span></p>
+  </footer>
+  <p id="deckStatus" class="sr-only" role="status" aria-live="polite"></p>
+</section>
+<dialog id="dOver" aria-labelledby="overviewTitle">
+  <header><div><p class="eyebrow">IL PERCORSO</p><h2 id="overviewTitle">Le tappe del viaggio</h2></div><button id="closeOverview" aria-label="Chiudi l’indice">×</button></header>
+  <div id="dGrid"></div>
+</dialog>
+<noscript><p class="noscript">Per navigare nelle slide è necessario JavaScript. Puoi leggere gli stessi argomenti nel <a href="index.html#quaderno">Quaderno di viaggio</a>.</p></noscript>
+</body>
+</html>
